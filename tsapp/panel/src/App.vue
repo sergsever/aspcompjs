@@ -2,7 +2,12 @@ import Vue from 'vue';
 <template>
 <v-stage ref="stage" :config="konva">
     <v-layer>
-      <v-line :config="line"></v-line>
+      <v-line :config="noteline(1)"></v-line>
+      <v-line :config="noteline(2)"></v-line>
+      <v-line :config="noteline(3)"></v-line>
+      <v-line :config="noteline(4)"></v-line>
+      <v-line :config="noteline(5)"></v-line>
+
       <!--<v-circle :config="circle"></v-circle>-->
     </v-layer>
   </v-stage>
@@ -28,13 +33,29 @@ export default {
       line:{
       x: 100,
   y: 50,
-  points: [0, 0, 200, 200],
+  points: [0, 50, 200, 50],
   stroke: 'red',
   tension: 1
       }
 
     }
 
+  },
+
+  methods:
+  {
+    noteline(num)
+    {
+      const hight = 30;
+      return {
+        x: 0,
+        y:0,
+        points: [0, hight * num, 200, hight * num],
+  stroke: 'red',
+  tension: 1
+
+      };
+    }
   }
 
 }
