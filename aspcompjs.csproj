@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="panel\" />
     <Folder Include="tsapp\" />
   </ItemGroup>
 
@@ -23,5 +24,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="cd c:\\work\\aspcompjs\\panel&#xD;&#xA;npm run build" />
+  </Target>
 
 </Project>
