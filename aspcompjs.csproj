@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.4" />
+    <PackageReference Include="vue" Version="2.6.11" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,9 @@
     <Content Update="web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\app\css\app.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\app\js\app.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -26,7 +30,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd c:\\work\\aspcompjs\\panel&#xD;&#xA;npm run build" />
+    <Exec Command="cd C:\work\aspcompjs\panel&#xD;&#xA;npm run build" />
   </Target>
 
 </Project>
